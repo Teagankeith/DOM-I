@@ -38,5 +38,39 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+// Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+let nav1 = document.querySelectorAll("nav a");
+nav1.forEach(( currentValue, index) => {
+  currentValue.textContent = siteContent.nav[`nav-item-${index + 1}`];
+  });
+
+let ctaText = document.querySelector("h1");
+ctaText.textContent = siteContent["cta"]["h1"];
+
+let buttonEl = document.querySelector('button');
+buttonEl.textContent = siteContent["cta"]["button"];
+
+let imageOne = document.getElementById("cta-img");
+imageOne.src= "img/header-img.png";
+
+let imageTwo = document.querySelector(".middle-img");
+imageTwo.src= "img/mid-page-accent.jpg";
+ 
+let pageHeaders = document.querySelectorAll(".main-content h4");
+let pageText = document.querySelectorAll(".main-content p");
+let topSections = ['features', 'about', 'services', 'product', 'vision'];
+for(let i=0; i< pageHeaders.length; i++){
+  pageHeaders[i].textContent = topSections[i];
+  pageText[i].textContent = siteContent["main-content"][`${sections[i]}-content`];
+}
+
+
+ let siteInfo = document.querySelector('.contact');
+siteInfo.innerHTML = '<h4>Contact</h4><p>123 Way 456 Street<br>Somewhere, USA</p><p>1 (888) 888-8888</p> <p>sales@greatidea.io</p>';
+
+let copyright = document.querySelector('footer');
+copyright.innerHTML = 'Copyright Great Idea! 2018';
+
+
